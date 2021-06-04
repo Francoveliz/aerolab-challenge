@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Navbar, Header, ProductCard } from "./components";
+import { products } from "./assets/utils";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="py-20 text-gray-600">
+			<Navbar />
+			<Header />
+			<div className="container grid lg:grid-cols-4 gap-5">
+				{products.map(product => (
+					<ProductCard {...product} />
+				))}
+			</div>
+		</div>
+	);
 }
 
 export default App;
