@@ -1,10 +1,11 @@
 import React from "react";
-import { userData } from "../../assets/utils";
 import { Logo, Coin } from "../../assets/svgs";
-
-const { name, points } = userData;
+import { useAppContext } from "../../context/context";
 
 const Navbar = () => {
+	const { user } = useAppContext();
+	const { name, points } = user;
+
 	return (
 		<nav className="py-3 ">
 			<div className="flex justify-between items-center container gap-5 ">

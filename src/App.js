@@ -1,15 +1,26 @@
-import { Navbar, Header, ProductCard } from "./components";
-import { products } from "./assets/utils";
+import {
+	Navbar,
+	Header,
+	ProductCard,
+	Filters,
+	AddPoints,
+} from "./components";
+import { useAppContext } from "./context/context";
 
 function App() {
+	const { displayProducts } = useAppContext();
 	return (
-		<div className="py-20 text-gray-600">
+		<div className=" text-gray-600">
 			<Navbar />
 			<Header />
-			<div className="container grid lg:grid-cols-4 gap-5">
-				{products.map(product => (
-					<ProductCard {...product} />
-				))}
+			<div className="container py-20">
+				<Filters />
+				<div className="grid lg:grid-cols-4 gap-5 py-10">
+					{displayProducts.map(product => (
+						<ProductCard {...product} key={product._id} />
+					))}
+				</div>
+				<AddPoints />
 			</div>
 		</div>
 	);
