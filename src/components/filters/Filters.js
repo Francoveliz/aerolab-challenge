@@ -37,8 +37,9 @@ const Filters = () => {
 	];
 
 	return (
-		<div className="flex gap-5 items-center text-gray-400">
+		<div className="flex gap-5 items-center text-gray-400 flex-wrap">
 			<p>Sort by: </p>
+
 			{filters.map(filter => (
 				<Filter {...filter} />
 			))}

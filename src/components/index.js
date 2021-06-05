@@ -7,3 +7,5 @@ export { default as ProductCard } from "./product-card/ProductCard";
 export { default as Filters } from "./filters/Filters";
 
 export { default as AddPoints } from "./add-points/AddPoints";
+
+export { default as Alert } from "./alert/Alert";

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BuyWhite, BuyBlue, Coin } from "../../assets/svgs";
 import { useAppContext } from "../../context/context";
+import { Alert } from "../../components";
 
 const ProductCard = ({ name, category, cost, img, _id }) => {
 	const [isHover, setIsHover] = useState(false);
 	const [insufficientPoints, setInsufficientPoints] = useState(false);
+	const [showAlert, setShowAlert] = useState(false);
 	const { fetchUser, user } = useAppContext();
 	const { points } = user;
 
@@ -17,13 +19,19 @@ const ProductCard = ({ name, category, cost, img, _id }) => {
 		}
 	}, [points]);
 
+	const handleCloseAlert = () => {
+		setTimeout(() => {
+			setShowAlert(false);
+		}, 4000);
+	};
+
 	const handleHover = () => {
 		setIsHover(state => !state);
 	};
 
 	const handleReedem = async id => {
 		try {
-			const reedem = await axios.post(
+			await axios.post(
 				"https://coding-challenge-api.aerolab.co/redeem",
 				{ productId: id },
 				{
@@ -33,7 +41,9 @@ const ProductCard = ({ name, category, cost, img, _id }) => {
 					},
 				}
 			);
+			setShowAlert(true);
 			fetchUser();
+			handleCloseAlert();
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -88,6 +98,9 @@ const ProductCard = ({ name, category, cost, img, _id }) => {
 						</button>
 					</div>
 				))}
+			{showAlert && (
+				<Alert text="You've redeem the product successfully" />
+			)}
 		</div>
 	);
 };
