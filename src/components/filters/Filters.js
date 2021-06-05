@@ -50,7 +50,7 @@ const Filters = () => {
 const Filter = ({ name, action }) => {
 	return (
 		<button
-			className="px-4 py-1.5  bg-gray-100 rounded-xl hover:bg-blue-400 hover:text-white"
+			className="px-4 py-1.5  bg-gray-100 rounded-xl hover:bg-primary hover:text-white"
 			onClick={action}>
 			{name}
 		</button>

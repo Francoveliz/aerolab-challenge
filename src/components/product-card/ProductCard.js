@@ -81,7 +81,7 @@ const ProductCard = ({ name, category, cost, img, _id }) => {
 					""
 				) : (
 					<div>
-						<div className="bg-blue-400 w-full h-full absolute inset-0 opacity-90" />
+						<div className="bg-primary w-full h-full absolute inset-0 opacity-90" />
 						<div className="absolute inset-0 flex flex-col justify-center items-center gap-4 px-6">
 							<div className="flex items-center gap-2">
 								<p className="text-white text-3xl">{cost}</p>

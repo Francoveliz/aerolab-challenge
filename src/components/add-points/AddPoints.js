@@ -24,7 +24,7 @@ const AddPoints = () => {
 	return (
 		<button
 			onClick={addPoints}
-			className="fixed bottom-5 right-5 bg-blue-400 px-4 py-2 rounded-full text-white">
+			className="fixed bottom-5 right-5 bg-primary px-4 py-2 rounded-full text-white">
 			Add points
 		</button>
 	);

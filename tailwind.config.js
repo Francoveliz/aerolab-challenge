@@ -10,6 +10,11 @@ module.exports = {
 				lg: "10rem",
 			},
 		},
+		extend: {
+			colors: {
+				primary: "#0ad4fa",
+			},
+		},
 	},
 	variants: {
 		extend: {},
