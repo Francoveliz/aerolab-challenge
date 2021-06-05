@@ -13,5 +13,6 @@ npm start
 
 ## Criteria
 
-:+1: :sparkles: :camel: :tada:
-:rocket: :metal: :octocat:
+:point_right: Each product should have a visible price in points.
+
+:point_right: The user should be able to sort products by price, from highest to lowest, and vice-versa.
