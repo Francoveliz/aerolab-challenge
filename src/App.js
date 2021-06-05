@@ -15,7 +15,7 @@ function App() {
 			<Header />
 			<div className="container py-20">
 				<Filters />
-				<div className="grid lg:grid-cols-4 gap-5 py-10">
+				<div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-5 py-10">
 					{displayProducts.map(product => (
 						<ProductCard {...product} key={product._id} />
 					))}

@@ -15,7 +15,7 @@ const Navbar = () => {
 				<p>{name}</p>
 				<div className="bg-gray-200 flex items-center px-4 py-1 gap-1 rounded-2xl">
 					<p className="text-lg">{points}</p>
-					<Coin className="-mb-1 " />
+					<Coin className="-mb-1 -mr-1" />
 				</div>
 			</div>
 		</nav>
